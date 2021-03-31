@@ -1,0 +1,1233 @@
+/* DO READ Readme.txt */
+
+body{
+  background-color: #0c1027;
+  color:white;
+  font-family: sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  left:0;
+  top:0;
+  right:0;
+  bottom:0;
+}
+
+/* header */
+
+/* Creating border animation in the header seaction */
+@keyframes Shadow {
+  0%{
+    box-shadow:  inset 0 0 30px #2f8ce9;
+  }
+  50%{
+    box-shadow:  inset 0 0 30px #8447a6;
+  }
+  100%{
+    box-shadow:  inset 0 0 30px #8eeafb;
+  }
+}
+header{
+  left:0;
+  top:0;
+  background-color: #141b41;
+  position:fixed;
+    z-index: 1;
+  width: 100%;
+  animation: Shadow 3s ease-in-out  infinite alternate;
+}
+
+.flex-1{
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.flex-2{
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.width{
+    width:35%;
+}
+
+.flex-3{
+  width:40%;
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+  padding-top: 1.8%;
+  left:20%;
+}
+
+.flex-4{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.flex-5{
+  display: flex;
+  justify-content: space-around;
+  margin:3%;
+  padding-right: 10%;
+}
+
+/* For making the content resposive here few functionality are hidden using this class
+later it will be assigned values for proper responsiveness of the content */
+.hidden{
+  height: 0;
+  width:0;
+  margin: 0;
+  padding: 0;
+}
+
+.studio-logo{
+  position: relative;
+  padding-left: 40%;
+  padding-top: 4%;
+}
+
+a{
+  text-decoration:none;
+  color:white;
+}
+
+/* Creating circle 360 rotation with increase decrease size effect */
+@keyframes transit {
+  0%{
+    border-radius: 25%;
+    transform: rotate(0deg) scale(0.9);
+  }
+  25%{
+    border-radius: 33%;
+  }
+  50%{
+    border-radius: 42%;
+  }
+  100%{
+    border-radius: 50%;
+    transform: rotate(360deg) scale(0.7);
+  }
+}
+
+/* Logo */
+
+/* logo image */
+.studio-logo span a img{
+  border-radius: 50%;
+  position: relative;
+  height:4.5rem;
+  animation: transit 3.5s ease-in-out infinite alternate;
+}
+
+.studio-logo span a img:hover{
+  box-shadow: 1px 1px 10px 2px #2f8ce9;
+}
+
+/* For creating a bounce effect */
+@keyframes Bounce {
+  0%{
+    transform: translateY(0px);
+  }
+  25%{
+    transform: translateY(5px);
+  }
+  50%{
+    transform: translateY(-5px);
+  }
+  75%{
+    transform: translateY(2.5px);
+  }
+  100%{
+    transform: translateY(-2.5px);
+  }
+}
+.logo-set{
+  display: inline-block;
+  position: relative;
+  font-size: 2rem;
+  animation: Bounce 3s ease-in-out  infinite alternate;
+}
+.logo-set>div{
+  padding-left: 0.5rem;
+}
+.logo-first{
+  font-family: cursive;
+
+}
+.logo-second{
+  font-family: fantasy;
+}
+
+/* Favourites */
+
+.fav{
+  position: relative;
+  padding-top: 5%;
+  font-size: 1.2rem;
+}
+
+/* Search-bar */
+
+.search-bar{
+  background-color: #1a1e33;
+  position: relative;
+  border-radius: 0.5rem;
+  height: 55%;
+  width:auto;
+}
+
+.search{
+  position: relative;
+  left:4%;
+}
+
+.search-bar input{
+  padding-left: 15px;
+  padding-top: 1%;
+  width:250px;
+  border: 0px solid transparent;
+  color: #d9dcdd;
+  background: transparent;
+  line-height: 1.6;
+  font-size: 1.2rem;
+}
+
+/* Voice detection mike */
+
+.mike{
+  position: relative;
+  font-size: 1rem;
+  left:85%;
+}
+
+/* Notification */
+
+.notification{
+  position: relative;
+  padding-top: 1%;
+ font-size: 1.5rem;
+}
+
+/* Profile-image */
+
+.profile-image{
+  position: relative;
+  height:4rem;
+  width:4rem;
+}
+.profile-image img{
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  margin-top: -30%;
+}
+
+/* Resposive dropdown button which will get displayed as soon as the screen size reaches
+to a particular width and thus a dropdown list containing notification and
+Favourite elements will appear */
+.dropbtn{
+  color:transparent;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+.dropdown-content a{
+  color:transparent;
+}
+
+/* Main */
+
+main{
+  display: inline-block;
+  height: auto;
+  position: relative;
+  width:65%;margin-left: 5%;
+  margin-top: 3%;
+
+}
+
+/* for fixing the container inside main later on which other content will
+get embedded for scrolling */
+.main-header{
+  height: 85%;
+  width: 65%;
+  position: fixed;
+}
+/* for making things scrollable as its upper div is fixed and this will
+contain all the information and thus has a relative position */
+.main-bar{
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+/* To hide the scrollbar */
+.main-bar::-webkit-scrollbar{
+  display: none;
+}
+/* slider section in main */
+#slider{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-evenly;
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-top: 80px;
+}
+.slider-image{
+  width:30%;
+  transition: 1s all ease-in-out;
+}
+
+.slider-image>img{
+  position: relative;
+  height: 100%;
+  width:100%;
+  transition: all 1s ease-in-out;
+}
+
+.slider-image:hover{
+  width:35%;
+}
+
+.slider-image>img:hover{
+  top:-5%;
+  height: 110%;
+  box-shadow: 2px 2px 10px 2px #6963a4;
+  z-index:1;
+}
+/* latest relese section */
+.container{
+  margin-top:20px;
+}
+.inner-container{
+  display: flex;
+  flex-wrap: wrap;
+  padding:20px;
+  width: 100%;
+  justify-content: space-evenly;
+  align-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.song-details{
+  display: flex;
+  justify-content:flex-start;
+  position: relative;
+  height: auto;
+}
+.song-details div{
+  margin-left: 2px;
+  padding-right: 15px;
+}
+.song-image{
+  position:relative;
+  height:90px;
+  width: 90px;
+
+}
+.song-image div img{
+  height: 100%;
+  width: 100%;
+}
+
+.song-feature{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+/* for creating play button over the image */
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.image-container:hover .image{
+  opacity: 0.3;
+}
+
+.image-container:hover .middle {
+  opacity: 1;
+}
+
+.text i{
+  color: white;
+  font-size: 1.5rem;
+}
+
+/* dropdown list with options */
+.drop-down {
+  float: left;
+}
+
+.drop-down .drop-btn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: grey;
+  padding-top: 10px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+.drop-btn{
+display: flex;
+justify-content: center;
+}
+/* align the dropdown list properly one way */
+.set-margin-1{
+  margin-left: -180px;
+  margin-top: -10px;
+}
+/* align the dropdown list properly another way */
+.set-margin-2{
+  margin-left: -100px;
+}
+.drop-down-content {
+  display: none;
+  position: absolute;
+  background-color:#1a1e33;
+  min-width: 180px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.drop-down-content a {
+  float: none;
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.drop-down-content a i{
+  margin-right: 10px;
+}
+.drop-down-content a:hover {
+  background-color: grey;
+}
+
+.drop-down:hover .drop-down-content {
+  display: block;
+}
+/* Artists */
+.artist{
+  margin-bottom: 30px;
+}
+/* Artist image */
+.artist img{
+  border-radius: 50%;
+  height:125px;
+  width: 125px;
+}
+/* Station section */
+.navy-blue{
+  background-color: #101642;
+}
+
+.music-type{
+  position: relative;
+  display: inline-block;
+  height: 90px;
+  width: 90px;
+}
+
+.music-type img{
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+  opacity: 0.8;
+}
+
+.station{
+  height:120px;
+  width: 120px;
+}
+/* Dark yellow  colored div for creating stations sign*/
+.dark-yellow{
+  background-color: #f9d64c;
+  z-index:0;
+  position: absolute;
+  top:20%;
+  left:0%;
+  height:80px;
+  width:120px;
+}
+/*  yellow colored div for creating stations sign*/
+.yellow{
+  background-color:#f0bc10;
+  position: absolute;
+  z-index:1;
+  top:-15%;
+  left:8%;
+  height:100px;
+  width:100px;
+}
+/*  Orange colored div for creating stations sign*/
+.orange{
+  background-color: #ff4f0a;
+  z-index:2;
+  position: absolute;
+  top:-10%;
+  left:10%;
+  height:120px;
+  width:80px;
+}
+
+.station-logo {
+  z-index: 3;
+  font-size: 1rem;
+}
+
+.music-text{
+  font-size: 18px;
+  font-weight: bold;
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+}
+
+.center{
+  text-align: center;
+}
+
+.updated-inner{
+  padding: 0px;
+  padding-top:20px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.parent{
+  position: relative;
+  display: inline-block;
+  height: 150px;
+  width:30%;
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden; /* so that on scaling the content does not flow out of container */
+}
+.parent img{
+  height: 100%;
+  width: 100%;
+  transition: transform 0.5s ease;
+  opacity: 0.7;
+}
+.parent img:hover{
+  transform: scale(1.3);
+}
+.parent-size{
+  font-size:150%;
+}
+
+
+.list-song{
+  height: 100%;
+  width:16%;
+}
+
+.list-song div img{
+  position: relative;
+  height:130px;
+  width: 100%;
+  border-radius: 5%;
+}
+
+.grey{
+  color:grey;
+  margin-top: 15px;
+  font-family: cursive;
+}
+
+.light-grey{
+  color:lightgrey;
+  margin-top: 5px;
+  font-family: serif;
+}
+
+.l-grey{
+  color:lightgrey;
+  margin-top: 5px;
+  font-family: sans-serif;
+}
+
+.black{
+  color:black;
+}
+
+.bold{
+  font-weight: bold;
+  letter-spacing:0.08rem;
+  font-size: 1.2rem;
+}
+
+/*aside*/
+
+aside{
+  display: inline-block;
+  height: 70%;
+  position: relative;
+    vertical-align: top;
+    width: 22%;
+    margin-left: 4%;
+    margin-top: 8%;
+}
+/* for fixing the container inside aside later on which other content will
+get embedded for scrolling */
+.aside-container{
+  height:70%;
+  width:22%;
+  position: fixed;
+}
+/* for making things scrollable as its upper div is fixed and this will
+contain all the information and thus has a relative position */
+.aside-bar{
+  position: relative;
+  height: 100%;
+  overflow-y: scroll;
+}
+/* To hide the scrollbar */
+.aside-bar::-webkit-scrollbar{
+  display: none;
+}
+/* content of aside section container */
+.queue_header{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+}
+.padding{
+  padding-left: 70px;
+}
+.green{
+  color:#05da73;
+}
+.queue_header div i{
+  padding-left: 5px;
+}
+
+.queue_heading{
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.update{
+  justify-content: space-between;
+  position: relative;
+  height: auto;
+  width: 95%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.color-1{
+  background-color: #1a1e33;
+}
+
+/* Aside images */
+.aside-image img{
+  height:50px;
+  border-radius: 5%;
+  width:50px;
+}
+.song-info{
+  font-size: 0.8rem;
+  margin-left: -30px;
+}
+.song-info div{
+  margin:2px;
+}
+
+/* Footer*/
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  color: white;
+  text-align: center;
+  height:65px;
+  width: 100%;
+  padding: 10px;
+  margin:0px;
+  background-color: #282828;
+  z-index:2;
+}
+.music-player{
+  display: flex;
+  justify-content: space-around;
+}
+/* footer 1 container */
+.footer1{
+  display: flex;
+  width:30%;
+justify-content: space-evenly;
+}
+
+.song-footer-info{
+  width:40%;
+}
+
+.song-footer-info>div{
+  width:100%;
+  font-size: 1rem;
+  margin-top: 5%;
+}
+/* Container containing name of singer and song */
+.scroll-left {
+height: 20px;
+width:200px;
+overflow: hidden;
+position: relative;
+}
+
+.scroll-left p {
+position: relative;
+width: 100%;
+height: 100%;
+margin: 0;
+text-align:center;
+transform:translateX(100%);
+animation: scroll-left 10s linear infinite;
+}
+
+/* For creating a running animation of the singer name and song name */
+@keyframes scroll-left {
+0% {
+transform: translateX(100%);
+}
+100% {
+transform: translateX(-100%);
+}
+}
+/* Image of song in the footer section */
+.footer-image{
+  position: relative;
+  height:100%;
+  width:80px;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-image>img{
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+/* footer 2 container */
+.footer2{
+  display: flex;
+  width:40%;
+  font-size:1rem;
+  flex-direction: column;
+}
+/* footer2 inner container 1 */
+.footer2-1{
+  width:100%;
+  position:relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.circle{
+  font-size: 2.5rem;
+}
+/* footer2 inner-container 2 */
+.footer2-2{
+  width:600px;
+  display: flex;
+  font-size: 1rem;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+/* show timeline of music container */
+.controller>div{
+  display: inline-block;
+}
+.controller>div>input{
+  position: relative;
+  display:inline-block;
+  width:500px;
+  height: 3px;
+  border-radius: 5px;
+  background: white;
+  outline: none;
+  opacity: 0.7;
+  transition: opacity .2s;
+}
+
+.controller-size>div>input{
+  width:100px;
+}
+
+/* footer 3 container */
+.footer3{
+  width:18%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+
+
+
+/*Coldplay.html*/
+
+/* Band Description section */
+.band-descrip{
+  background-color: #141b41;
+  position: relative;
+  height:auto;
+  min-height:250px;
+  width:100%;
+  margin: 0%;
+  padding: 0%;
+  margin-top: 3rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.band-margins{
+  position: relative;
+  width: 100%;
+}
+
+.band-margins>div{
+  position: relative;
+  left:4%;
+  letter-spacing: 0.05rem;
+  width:95%;
+}
+
+/* band image */
+.band-image{
+  position: relative;
+  height: auto;
+}
+
+.band-image img{
+  height: 100%;
+  width: 20rem;
+  opacity: 0.6;
+}
+
+/* Play All Button */
+.btn1{
+  background-image: linear-gradient(90deg,#3d26b2,#7d36c7,#bc46dd);/* Creating linear gradient of three colors as the background of the button*/
+  height:40px;
+  width:150px;
+  color:white;
+  letter-spacing: 0.05rem;
+  margin-left: 0%;
+}
+
+
+
+.margin-top{
+  margin-top: -30px;
+}
+.image-size-update img{
+height: 80px;
+width: 60px;
+}
+
+/* Media Queries */
+
+/* Media query for width of 1400px */
+@media screen and (max-width:1400px) {
+  /* Conrolling the width of footer music player */
+  .footer2-2{
+  width:550px;
+}
+.controller>div>input{
+  width:450px;
+}
+.controller-size>div>input{
+  width:100px;
+}
+
+}
+
+/* Media query for width of 1300px */
+@media screen and (max-width:1300px)  {
+/* Conrolling the width of footer music player */
+  .footer2-2{
+  width:480px;
+}
+.controller>div>input{
+  width:400px;
+}
+.controller-size>div>input{
+  width:100px;
+}
+}
+/* Media query for width of 1200px */
+@media screen and (max-width:1200px) {
+  /* Conrolling the width of footer music player */
+  .footer-image{
+    width:50px;
+    height:90%;
+  }
+  .footer2-2{
+  width:440px;
+}
+/* Giving new values to the properties of various classes to make them responsive */
+.controller>div>input{
+  width:360px;
+}
+.controller-size>div>input{
+  width:60px;
+}
+  main{
+    width:98%;
+    margin:0%;
+    padding-top:5%;
+    margin-left: 2%;
+    overflow-x: hidden;
+  }
+  /* making it relative instead of fixed so that the content flow will not get disturbed */
+  .main-header{
+    width:98%;
+    position: relative;
+  }
+  .main-bar{
+    overflow-x: visible;
+  }
+  aside{
+    width:80%;
+    height: 100%;
+    margin-left: 0%;
+    margin-top: 3%;
+  }
+  /* making it relative instead of fixed so that the content flow will not get disturbed */
+  .aside-container{
+    position: relative;
+    width:100%;
+    height: 100%;
+    margin-left: 5%;
+  }
+  .aside-bar{
+    position: relative;
+  }
+  /* Setting new bounce values */
+  @keyframes Bounce {
+    0%{
+      transform: translateY(0px);
+    }
+    25%{
+      transform: translateY(2.5px);
+    }
+    50%{
+      transform: translateY(-2.5px);
+    }
+    75%{
+      transform: translateY(1.25px);
+    }
+    100%{
+      transform: translateY(-1.25px);
+    }
+  }
+  #slider{
+    margin-top: 50px;
+  }
+  .list-song div img{
+    height:100px;
+  }
+  .search-bar input{
+    width:200px;
+    font-size: 1rem;
+  }
+  .studio-logo{
+    padding-left: 20%;
+  }
+  .studio-logo span a img{
+  border-radius: 50%;
+  position: relative;
+  height:3.5rem;
+
+}
+.logo-set{
+  font-size: 1.5rem;
+}
+  .fav{
+    color:transparent;
+  }
+  .notification{
+    color:transparent;
+  }
+  .width{
+    width:20%;
+  }
+  .profile-image>img{
+    height: 3rem;
+    width: 3rem;
+  }
+  .dropdown {
+    float: left;
+  }
+
+  .dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding-top: 10px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+.dropbtn{
+  display: flex;
+  align-items:flex-start;
+}
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:#1a1e33;
+    margin-top: -30px;
+    margin-left: -90px;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  .dropdown-content a {
+    float: none;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  .dropdown-content a i{
+    margin-right: 10px;
+  }
+  .dropdown-content a:hover {
+    background-color: grey;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+}
+/* Media query for width of 1050px */
+@media screen and (max-width:1050px){
+  /* Conrolling the width of footer music player */
+  .footer2-2{
+  width:420px;
+}
+.controller>div>input{
+  width:340px;
+}
+.controller-size>div>input{
+  width:60px;
+}
+}
+
+/* Media query for width of 950px */
+@media screen and (max-width:950px){
+  /* Conrolling the width of footer music player */
+  .footer2-2{
+  width:380px;
+}
+.controller>div>input{
+  width:300px;
+}
+.controller-size>div>input{
+  width:60px;
+}
+}
+
+/* Media query for width of 850px */
+@media screen and (max-width:850px){
+  /* Conrolling the width of footer music player */
+  .footer2-2{
+  width:340px;
+}
+.controller>div>input{
+  width:260px;
+}
+.controller-size>div>input{
+  width:40px;
+}
+}
+
+/* Media query for width of 750px */
+@media screen and (max-width:750px){
+  /* Conrolling the width of footer music player */
+  .footer2-2{
+  width:300px;
+}
+.controller>div>input{
+  width:220px;
+}
+.controller-size>div>input{
+  width:40px;
+}
+}
+
+/* Media query for width of 700px */
+@media screen and (max-width:700px) {
+  /* Giving new values to properties of the different classes for making the complete site look fully responsive */
+  .footer1{
+    width:33%;
+  }
+  .footer2>div{
+    margin-top: 10px;
+  }
+  .circle{
+    font-size: 1.3rem;
+  }
+  .footer3{
+    width:27%;
+    font-size: 0.8rem;
+  }
+  .footer2-2{
+  width:150px;
+}
+.controller>div>input{
+  width:70px;
+}
+.controller-size>div>input{
+  width:30px;
+}
+.scroll-left{
+  left:-30%;
+}
+.footer-image{
+  width:50px;
+  left:-10%;
+}
+.footer-image>img{
+  width:80%;
+  height:80%;
+
+}
+  #slider{
+    flex-direction: column;
+    margin-top: 40px;
+  }
+  .slider-image{
+    width:75%;
+  }
+  .slider-image:hover{
+    width:85%;
+    margin-left: -5%;
+  }
+  .new-size{
+    font-size: 0.8rem;
+  }
+  .light-grey{
+    font-size: 0.6rem;
+  }
+  .list-song div img{
+    height:60px;
+  }
+  .parent{
+    width: 80%;
+    height: 200px;
+    margin: 2%;
+    margin-left: 15%;
+  }
+  .dark-yellow{
+    height: 60px;
+    width:95px;
+  }
+  .yellow{
+    width:80px;
+    height: 80px;
+  }
+  .orange{
+    height: 100px;
+    width:60px;
+  }
+  .new-flex-2{
+    flex-direction: column;
+  }
+  .flex-3{
+    left:18%;
+  }
+  .search-bar{
+    font-size: 0.8rem;
+  }
+  .dropdown .dropbtn{
+    padding-top: 8px;
+  }
+  .search-bar input{
+    width:100px;
+    font-size: 0.8rem;
+  }
+  .mike{
+    font-size: 0.8rem;
+    left:80%;
+  }
+  /* Setting the logo image for proper responsiveness of the site */
+  .studio-logo{
+    padding-left: 10%;
+  }
+  .studio-logo span a img{
+  border-radius: 50%;
+  position: relative;
+  height:2.5rem;
+
+}
+/* Setting the font-size of logo-set class */
+.logo-set{
+  font-size: 1rem;
+}
+/* increasing the aside width */
+  aside{
+    width:85%;
+  }
+  .band-margins{
+    background-image: url(Images/coldplay2.jpg);/* Adding image as a background image for it would be more visible*/
+    background-repeat: no-repeat;
+    background-size:auto;
+    background-position:center;
+    opacity: 0.8;
+  }
+
+  /* making image size zero so that it will not overlap with the background image */
+  .band-image img{
+    width:0%;
+    height: 0%;
+  }
+  .band-image{
+    height: 0%;
+    width: 0%;
+  }
+  /* white color text with black text shadow so that it will be visible on the background image */
+  .white{
+    color:white;
+    font-weight: bold;
+    text-shadow: 1px 1px black;
+  }
+}
